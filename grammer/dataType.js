@@ -3,7 +3,5 @@
     : null, NaN, 0, 빈 문자열, undefined
 */
 
-if(undefined)
-  console.log("참")
-else
-  console.log("거짓")
+if (undefined) console.log("참")
+else console.log("거짓")
