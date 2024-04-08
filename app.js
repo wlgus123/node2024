@@ -1,5 +1,5 @@
 const express = require('express')
-const path = require('path')  // node에서 기본으로 제공하는 패키기
+const path = require('path')  // node에서 기본으로 제공하는 패키지
 const app = express()
 const port = 3000
 
@@ -10,7 +10,15 @@ app.get("/", (req, res) => {
   res.send("Hello World!")
 })
 
+// localhost:3000/test/JWP?lang=ko
+app.get('/test/:name', (req, res) => {
+  console.log('path', req.path)       // '/test/JWP'
+  console.log('params', req.params)   // {name: 'JWP'}
+  console.log('query', req.query)     // {leng: 'ko'}
+  res.send('콘솔을 확인해주세요.')
+})
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
-  console.log(express.static(path.join(__dirname, 'html')))
+  console.log(path.join(__dirname, 'html'))
 })
